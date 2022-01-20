@@ -17,7 +17,7 @@ node {
     println SFDC_HOST
     println CONNECTED_APP_CONSUMER_KEY
     //def toolbelt = tool 'toolbelt'
-    echo "${env.JAVA_HOME}";
+    echo "${env.ANT_HOME}";
     stage('checkout source') {
         // when running in multi-branch job, one must issue this command
         checkout scm
