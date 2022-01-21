@@ -39,7 +39,7 @@ node {
             println(rmsg)
         }*/
 	    stage('Auth Org') {
-        rc = bat returnStatus: true, script: "sfdx force:auth:jwt:grant --instanceurl ${SFDC_HOST} --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --setalias HubOrg"
+        rc = bat returnStatus: true, script: "sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile \"${jwt_key_file}\" --setdefaultdevhubusername --setalias HubOrg --instanceurl ${SFDC_HOST}"
                 if (rc != 0) {
                     error 'Salesforce dev hub org authorization failed.'
                 }
