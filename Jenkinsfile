@@ -11,13 +11,6 @@ node {
     def JWT_KEY_CRED_ID = env.JWT_CRED_ID_DH
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH
 
-    println 'KEY IS' 
-    println JWT_KEY_CRED_ID
-    println HUB_ORG
-    println SFDC_HOST
-    println CONNECTED_APP_CONSUMER_KEY
-    //def toolbelt = tool 'toolbelt'
-    echo "${env.ANT_HOME}";
     stage('checkout source') {
         // when running in multi-branch job, one must issue this command
         checkout scm
@@ -71,7 +64,7 @@ node {
         }
 
         stage('Import Objects Data into other org'){
-            rc2 = command "sfdx auth:jwt:grant --instanceurl ${SFDC_HOST} --clientid ${CONNECTED_APP_CONSUMER_KEY_TWO} --username ${USERNAME2} --jwtkeyfile ${jwt_key_file} --setalias OrgDevRebbe"
+            rc2 = command "sfdx auth:jwt:grant --instanceurl ${SFDC_HOST} --clientid ${CONNECTED_APP_CONSUMER_KEY_TWO} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setalias OrgDevRebbe"
                     if (rc2 != 0) {
                         error 'Salesforce dev hub org authorization failed.'
                     }
