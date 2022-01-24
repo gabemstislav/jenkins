@@ -59,7 +59,7 @@ node {
 
         stage('Export Objects data'){
 
-            emsg = command "sfdx texei:data:export --objects Account --outputdir C:\Jenkins --targetusername HubOrg"
+            emsg = command "sfdx texei:data:export --objects Account --outputdir "C:\Jenkins" --targetusername HubOrg"
             println('EXPORT TEST')
             println(emsg)
         }
