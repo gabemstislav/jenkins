@@ -59,12 +59,12 @@ node {
 
         stage('Export Objects data'){
 
-            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir ./data-source --targetusername HubOrg"
+            emsg = command "sfdx texei:data:export --objects Account --outputdir ./data-source --targetusername HubOrg"
             println('EXPORT TEST')
             println(emsg)
         }
 
-        stage('Import Objects Data into other org'){
+        /*stage('Import Objects Data into other org'){
             rc2 = command "sfdx auth:jwt:grant --instanceurl ${SFDC_HOST} --clientid ${CONNECTED_APP_CONSUMER_KEY_TWO} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setalias OrgDevRebbe"
                     if (rc2 != 0) {
                         error 'Salesforce dev hub org authorization failed.'
@@ -73,6 +73,6 @@ node {
              emsg = command "sfdx texei:data:import --inputdir ./data-source --targetusername OrgDevRebbe"
             println('IMPORT TEST')
 
-        }
+        }*/
     }
 }
