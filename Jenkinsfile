@@ -63,6 +63,12 @@ node {
             println('EXPORT TEST')
             println(emsg)
         }
+	stage('Export Objects data plan'){
+
+            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir ./data-source --targetusername HubOrg"
+            println('EXPORT TEST')
+            println(emsg)
+        }
 
         /*stage('Import Objects Data into other org'){
             rc2 = command "sfdx auth:jwt:grant --instanceurl ${SFDC_HOST} --clientid ${CONNECTED_APP_CONSUMER_KEY_TWO} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setalias OrgDevRebbe"
