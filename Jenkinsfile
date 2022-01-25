@@ -18,7 +18,7 @@ node {
     }
 
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
-        sh 'sfdx plugins:install texei-sfdx-plugin'
+        sh 'sfdx plugins:install texei-sfdx-plugin -y'
 	    stage('Auth Org') {
         rc = sh returnStatus: true, script: "sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST} --setalias HubOrg"
                 if (rc != 0) {
