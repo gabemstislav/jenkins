@@ -39,7 +39,7 @@ node {
 
         stage('Export Objects data'){
 
-            emsg = command "sfdx texei:data:export --objects Account  --targetusername HubOrg"
+            emsg = command "sfdx texei:data:export --objects Contact  --outputdir ./ --targetusername HubOrg"
 		sh 'pwd'
             println('EXPORT TEST')
             println(emsg)
