@@ -46,7 +46,7 @@ node {
         }
 	/*stage('Export Objects data plan'){
 
-            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir /var/jenkins_home/workspace/data-source --targetusername HubOrg"
+            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir data --targetusername HubOrg"
             println('EXPORT TEST')
             println(emsg)
         }*/
