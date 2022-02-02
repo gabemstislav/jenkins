@@ -38,15 +38,15 @@ node {
 
 
         stage('Export Objects data'){
-		emsg = command "sfdx texei:data:plan:generate --objects Account,Contact --outputdir data"
-            emsg = command "sfdx texei:data:export --objects Contact --outputdir data --targetusername HubOrg"
+		emsg = command "sfdx texei:data:plan:generate --objects Account,Contact --outputdir data-source"
+            emsg = command "sfdx texei:data:export --objects Contact --outputdir data-source --targetusername HubOrg"
 		sh 'pwd'
             println('EXPORT TEST')
             println(emsg)
         }
 	/*stage('Export Objects data plan'){
 
-            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir data --targetusername HubOrg"
+            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir data-source --targetusername HubOrg"
             println('EXPORT TEST')
             println(emsg)
         }*/
