@@ -1,0 +1,31 @@
+{
+  "excludedFields": [
+    "LastModifiedDate",
+    "CreatedById",
+    "CreatedDate",
+    "LastModifiedById"
+  ],
+  "lookupOverride": {},
+  "sObjects": [
+    {
+      "name": "testcs__c",
+      "label": "",
+      "filters": "",
+      "orderBy": "",
+      "externalId": "NumberExt__c",
+      "excludedFields": ["SetupOwnerId"]
+    },
+    {
+      "name": "Account",
+      "label": "Parent Account",
+      "filters": "ParentId = null",
+      "externalId": ""
+    },
+    {
+      "name": "Account",
+      "label": "Child Account",
+      "filters": "ParentId != null",
+      "externalId": ""
+    }
+  ]
+}
