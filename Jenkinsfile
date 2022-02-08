@@ -9,8 +9,8 @@ node {
     def SFDC_HOST = env.SFDC_HOST_DH
     def JWT_KEY_CRED_ID = env.JWT_CRED_ID_DH
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH
-    def CONNECTED_APP_CONSUMER_KEY_TWO=env.CONNECTED_APP_CONSUMER_KEY_DH_TWO
-    def USERNAME2='rebbe@dev.com'
+    def CONNECTED_APP_CONSUMER_KEY_TWO=env.CONNECTED_APP_CONSUMER_KEY_DH_PROD
+    def USERNAME2=env.HUB_ORG_DH_PROD
 
 
 withEnv(["HOME=${env.WORKSPACE}"]) {
@@ -25,7 +25,7 @@ withEnv(["HOME=${env.WORKSPACE}"]) {
 			println rc
         }
 
-
+/*
         stage('Run Test Code') {
 
 			// need to pull out assigned username
@@ -33,7 +33,7 @@ withEnv(["HOME=${env.WORKSPACE}"]) {
 			  
             println('Hello from a Job DSL script! ok')
             println(rmsg)
-        }
+        }*/
 
 
         stage('Export Objects data'){
