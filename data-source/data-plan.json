@@ -8,14 +8,6 @@
   "lookupOverride": {},
   "sObjects": [
     {
-      "name": "testcs__c",
-      "label": "",
-      "filters": "",
-      "orderBy": "",
-      "externalId": "NumberExt__c",
-      "excludedFields": ["SetupOwnerId"]
-    },
-    {
       "name": "Account",
       "label": "Parent Account",
       "filters": "ParentId = null",
