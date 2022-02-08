@@ -12,7 +12,6 @@ node {
     def CONNECTED_APP_CONSUMER_KEY_TWO=env.CONNECTED_APP_CONSUMER_KEY_DH_TWO
     def USERNAME2='rebbe@dev.com'
 
-    def texei = tool 'texei'
 
 withEnv(["HOME=${env.WORKSPACE}"]) {
         
