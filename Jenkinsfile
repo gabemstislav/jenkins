@@ -38,7 +38,7 @@ withEnv(["HOME=${env.WORKSPACE}"]) {
 
         stage('Export Objects data'){
 
-            emsg = command "sfdx texei:data:export --dataplan ./datasource/dataplan.json --outputdir ./datasource --targetusername HubOrg"
+            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir ./data-source --targetusername HubOrg"
             println('EXPORT TEST')
             println(emsg)
         }
@@ -49,7 +49,7 @@ withEnv(["HOME=${env.WORKSPACE}"]) {
                         error 'Salesforce dev hub org authorization failed.'
                     }
             println rc2
-             emsg = command "sfdx texei:data:import --inputdir ./datasource --targetusername OrgDevRebbe"
+             emsg = command "sfdx texei:data:import --inputdir ./data-source --targetusername OrgDevRebbe"
             println('IMPORT TEST')
 
         }
