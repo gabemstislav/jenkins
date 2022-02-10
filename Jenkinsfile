@@ -1,4 +1,5 @@
 #!groovy
+@Library('sfdx-jenkins-shared-library')
 import groovy.json.JsonSlurperClassic
 node {
 
