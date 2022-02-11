@@ -37,8 +37,8 @@ withEnv(["HOME=${env.WORKSPACE}"]) {
 
 
         stage('Export Objects data'){
-		emsg = command "sfdx texei:package:dependencies:install"
-            emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir ./data-source --targetusername HubOrg"
+            //emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir ./data-source --targetusername HubOrg"
+		emsg = command "sfdx force:data:tree:export -q "SELECT Id,Name,(Select FirstName,LastName from Contacts) FROM Account limit 2" -d ./data -p -u HubOrg"
             println('EXPORT TEST')
             println(emsg)
         }
