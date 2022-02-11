@@ -37,7 +37,7 @@ withEnv(["HOME=${env.WORKSPACE}"]) {
 
 
         stage('Export Objects data'){
-
+		emsg = command "sfdx texei:package:dependencies:install"
             emsg = command "sfdx texei:data:export --dataplan ./data-source/data-plan.json --outputdir ./data-source --targetusername HubOrg"
             println('EXPORT TEST')
             println(emsg)
